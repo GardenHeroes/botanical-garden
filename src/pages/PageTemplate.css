@@ -1,0 +1,134 @@
+.page {
+  width: 100%;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #5B8E7D 0%, #8B9D6F 100%);
+  color: white;
+  padding: clamp(4rem, 10vw, 8rem) 0;
+  text-align: center;
+}
+
+.hero-section h1 {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  opacity: 0.95;
+}
+
+.content-section {
+  background: var(--cream);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.content-grid > div {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.content-section h2 {
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+
+.content-section p {
+  color: var(--taupe);
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.team-section, .conservation-section {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-whisper);
+  margin-bottom: 2rem;
+}
+
+.team-section h2, .conservation-section h2 {
+  margin-bottom: 1rem;
+}
+
+.grid-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.grid-item {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-whisper);
+  transition: all 0.3s;
+}
+
+.grid-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.grid-item h3 {
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.grid-item p {
+  color: var(--taupe);
+  font-size: 0.95rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--charcoal);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  font-family: 'Satoshi', sans-serif;
+  border: 1px solid var(--border-whisper);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 2px rgba(91, 142, 125, 0.1);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 0;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .grid-items {
+    grid-template-columns: 1fr;
+  }
+}

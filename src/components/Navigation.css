@@ -1,0 +1,86 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(245, 242, 237, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(92, 142, 125, 0.1);
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  gap: 2rem;
+}
+
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2C2C2C;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: #5B8E7D;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #2C2C2C;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #5B8E7D;
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.btn-tickets {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .nav-content {
+    padding: 0.75rem 0;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .btn-tickets {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}

@@ -20,14 +20,25 @@
 
 .hero-text h1 {
   color: var(--white);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-size: clamp(2.5rem, 8vw, 3.5rem);
+}
+
+.status-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
 }
 
 .hero-subtitle {
   color: rgba(255, 255, 255, 0.9);
   font-size: clamp(1rem, 3vw, 1.25rem);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   max-width: 600px;
 }
 
@@ -60,9 +71,50 @@
 }
 
 .featured-collections h2 {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   color: var(--charcoal);
-  text-align: left;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--taupe);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gardens-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.garden-preview {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-whisper);
+  transition: all 0.3s;
+}
+
+.garden-preview:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.garden-preview-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.garden-preview p {
+  font-size: 0.85rem;
+  color: var(--charcoal);
+  font-weight: 500;
 }
 
 .collections-grid {
@@ -142,6 +194,40 @@
 
 .card-link:hover::after {
   transform: scaleX(1);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #5B8E7D 0%, #8B9D6F 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.cta-content .btn-primary {
+  background-color: var(--white);
+  color: #5B8E7D;
+  font-weight: 600;
+}
+
+.cta-content .btn-primary:hover {
+  background-color: var(--cream);
 }
 
 /* Newsletter Section */

@@ -1,26 +1,22 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../LanguageContext'
+import { translations } from '../translations'
 import './Home.css'
 
 function Home() {
-  const collections = [
-    {
-      id: 1,
-      name: 'Tropical House',
-      description: 'Lush rainforest plants in a controlled climate environment.',
-      image: 'https://picsum.photos/400/300?random=1'
-    },
-    {
-      id: 2,
-      name: 'Native Plants',
-      description: 'Local species adapted to our climate and ecosystem.',
-      image: 'https://picsum.photos/400/300?random=2'
-    },
-    {
-      id: 3,
-      name: 'Desert Succulents',
-      description: 'Drought-resistant plants from arid climates.',
-      image: 'https://picsum.photos/400/300?random=3'
-    }
+  const { language } = useLanguage()
+  const t = translations[language]
+
+  const gardens = [
+    { name: t.gardens.oriental, icon: '🧘' },
+    { name: t.gardens.desert, icon: '🌵' },
+    { name: t.gardens.foodForest, icon: '🌳' },
+    { name: t.gardens.pharmacy, icon: '🌿' },
+    { name: t.gardens.maya, icon: '🏛️' },
+    { name: t.gardens.pollinators, icon: '🦋' },
+    { name: t.gardens.orchids, icon: '🌸' },
+    { name: t.gardens.onsen, icon: '♨️' },
+    { name: t.gardens.bamboo, icon: '🎋' }
   ]
 
   return (
@@ -30,55 +26,47 @@ function Home() {
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
-              <h1>Discover Nature's Beauty</h1>
-              <p className="hero-subtitle">Explore our living collections and seasonal discoveries</p>
+              <h1>Jardín Botánico de 5 Colores</h1>
+              <p className="hero-subtitle">{t.home.subtitle}</p>
+              <p className="status-badge">{t.home.preOpening}</p>
               <div className="hero-ctas">
-                <Link to="/" className="btn-primary">Get Tickets Now</Link>
-                <Link to="/plants" className="btn-secondary">Explore Our Plants</Link>
+                <Link to="/visit" className="btn-primary">{t.home.cta1}</Link>
+                <Link to="/gardens" className="btn-secondary">{t.home.cta2}</Link>
               </div>
             </div>
             <div className="hero-image">
-              <img src="https://picsum.photos/500/400?random=hero" alt="Botanical garden greenhouse" />
+              <img src="https://picsum.photos/500/400?random=hero" alt="Botanical garden" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Collections */}
+      {/* Featured Gardens */}
       <section className="section featured-collections">
         <div className="container">
-          <h2>What's Blooming Now</h2>
-          <div className="collections-grid">
-            {collections.map(collection => (
-              <div key={collection.id} className="collection-card">
-                <div className="card-image">
-                  <img src={collection.image} alt={collection.name} />
-                </div>
-                <div className="card-content">
-                  <h3>{collection.name}</h3>
-                  <p>{collection.description}</p>
-                  <Link to="/plants" className="card-link">Learn More →</Link>
-                </div>
+          <h2>{t.home.featuredTitle}</h2>
+          <p className="section-subtitle">{t.home.featuredDesc}</p>
+          <div className="gardens-preview">
+            {gardens.slice(0, 6).map((garden, idx) => (
+              <div key={idx} className="garden-preview">
+                <div className="garden-preview-icon">{garden.icon}</div>
+                <p>{garden.name}</p>
               </div>
             ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <Link to="/gardens" className="btn-primary">Explore All 9 Gardens</Link>
           </div>
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="section newsletter">
+      {/* Call to Action */}
+      <section className="section cta-section">
         <div className="container">
-          <div className="newsletter-content">
-            <h2>Stay Updated on Seasonal Blooms</h2>
-            <p>Get plant care tips and garden news delivered monthly</p>
-            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                required
-              />
-              <button type="submit" className="btn-primary">Subscribe</button>
-            </form>
+          <div className="cta-content">
+            <h2>Ready for an Immersive Experience?</h2>
+            <p>Book your visit to Jardín Botánico de 5 Colores and discover the magic of sustainable tourism and nature connection.</p>
+            <Link to="/visit" className="btn-primary">Book Your Visit</Link>
           </div>
         </div>
       </section>

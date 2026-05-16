@@ -118,6 +118,175 @@
   box-shadow: 0 0 0 2px rgba(91, 142, 125, 0.1);
 }
 
+/* Gardens Grid */
+.gardens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.garden-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-whisper);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.garden-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.garden-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.garden-card h3 {
+  color: var(--charcoal);
+  margin-bottom: 0.75rem;
+}
+
+.garden-card p {
+  color: var(--taupe);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-item {
+  background: var(--cream);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--sage);
+}
+
+.menu-item h4 {
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.menu-item p {
+  color: var(--taupe);
+  font-size: 0.9rem;
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.features-list li {
+  color: var(--sage);
+  font-weight: 500;
+  padding: 0.75rem 0;
+}
+
+/* Wellness Cards */
+.wellness-card {
+  background: linear-gradient(135deg, rgba(91, 142, 125, 0.05) 0%, rgba(139, 157, 111, 0.05) 100%);
+  border-top: 3px solid var(--sage);
+}
+
+.wellness-card .highlight {
+  color: var(--sage);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Alert Box */
+.alert-box {
+  background: linear-gradient(135deg, rgba(91, 142, 125, 0.1) 0%, rgba(139, 157, 111, 0.1) 100%);
+  border-left: 4px solid var(--sage);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+}
+
+.alert-box h3 {
+  color: #5B8E7D;
+  margin-bottom: 0.5rem;
+}
+
+.alert-box p {
+  color: var(--charcoal);
+  margin: 0;
+}
+
+/* Booking Section */
+.booking-section {
+  background: var(--white);
+  border: 2px dashed var(--border-whisper);
+}
+
+.cal-com-container {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* Values Grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.value-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--cream);
+  border-radius: var(--radius-md);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.value-item p {
+  color: var(--charcoal);
+  font-weight: 500;
+}
+
+/* Audiences List */
+.audiences-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.audience {
+  background: var(--cream);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--sage);
+  text-align: center;
+}
+
+.audience h4 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.audience p {
+  color: var(--taupe);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 @media (max-width: 768px) {
   .hero-section {
     padding: 3rem 0;
@@ -129,6 +298,10 @@
   }
 
   .grid-items {
+    grid-template-columns: 1fr;
+  }
+
+  .gardens-grid {
     grid-template-columns: 1fr;
   }
 }

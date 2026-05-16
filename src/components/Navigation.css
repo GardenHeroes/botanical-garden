@@ -59,6 +59,29 @@
   width: 100%;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-toggle {
+  background: transparent;
+  border: 1px solid #5B8E7D;
+  color: #5B8E7D;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.lang-toggle:hover {
+  background-color: rgba(91, 142, 125, 0.1);
+  color: #4a7066;
+}
+
 .btn-tickets {
   padding: 10px 20px;
   font-size: 0.95rem;
